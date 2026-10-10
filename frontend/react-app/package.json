@@ -1,0 +1,13 @@
+{
+  "scripts": {"dev":"vite","build":"vite build"},
+  "dependencies": {
+    "@vitejs/plugin-react":"latest",
+    "react":"latest",
+    "react-dom":"latest",
+    "three":"latest",
+    "urdf-loader":"latest",
+    "roslib":"latest",
+    "vite":"latest"
+  },
+  "devDependencies": {}
+}

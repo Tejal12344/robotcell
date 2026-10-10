@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+
+<robot name="mini_6dof_robot">
+
+  <!-- Materials -->
+
+  <material name="blue">
+    <color rgba="0.15 0.35 0.85 1"/>
+  </material>
+
+  <material name="gray">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+
+
+  <!-- BASE -->
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.35" length="0.25"/>
+      </geometry>
+
+      <material name="gray"/>
+    </visual>
+  </link>
+
+
+  <!-- LINK 1 -->
+
+  <link name="link_1">
+    <visual>
+      <geometry>
+        <box size="0.25 0.25 0.8"/>
+      </geometry>
+
+      <material name="blue"/>
+    </visual>
+  </link>
+
+
+  <!-- LINK 2 -->
+
+  <link name="link_2">
+    <visual>
+      <geometry>
+        <box size="0.8 0.22 0.22"/>
+      </geometry>
+
+      <material name="blue"/>
+    </visual>
+  </link>
+
+
+  <!-- LINK 3 -->
+
+  <link name="link_3">
+    <visual>
+      <geometry>
+        <box size="0.65 0.18 0.18"/>
+      </geometry>
+
+      <material name="blue"/>
+    </visual>
+  </link>
+
+
+  <!-- LINK 4 -->
+
+  <link name="link_4">
+    <visual>
+      <geometry>
+        <cylinder radius="0.13" length="0.35"/>
+      </geometry>
+
+      <material name="gray"/>
+    </visual>
+  </link>
+
+
+  <!-- LINK 5 -->
+
+  <link name="link_5">
+    <visual>
+      <geometry>
+        <cylinder radius="0.11" length="0.3"/>
+      </geometry>
+
+      <material name="blue"/>
+    </visual>
+  </link>
+
+
+  <!-- LINK 6 -->
+
+  <link name="link_6">
+    <visual>
+      <geometry>
+        <box size="0.3 0.16 0.16"/>
+      </geometry>
+
+      <material name="gray"/>
+    </visual>
+  </link>
+
+
+  <!-- TOOL -->
+
+  <link name="tool0">
+    <visual>
+      <geometry>
+        <cylinder radius="0.06" length="0.2"/>
+      </geometry>
+
+      <material name="gray"/>
+    </visual>
+  </link>
+
+
+  <!-- JOINT 1 -->
+
+  <joint name="joint_1" type="revolute">
+
+    <parent link="base_link"/>
+
+    <child link="link_1"/>
+
+    <origin
+      xyz="0 0 0.525"
+      rpy="0 0 0"/>
+
+    <axis xyz="0 0 1"/>
+
+    <limit
+      lower="-3.14159"
+      upper="3.14159"
+      effort="20"
+      velocity="2"/>
+
+  </joint>
+
+
+  <!-- JOINT 2 -->
+
+  <joint name="joint_2" type="revolute">
+
+    <parent link="link_1"/>
+
+    <child link="link_2"/>
+
+    <origin
+      xyz="0 0 0.45"
+      rpy="0 1.5708 0"/>
+
+    <axis xyz="0 1 0"/>
+
+    <limit
+      lower="-2.5"
+      upper="2.5"
+      effort="20"
+      velocity="2"/>
+
+  </joint>
+
+
+  <!-- JOINT 3 -->
+
+  <joint name="joint_3" type="revolute">
+
+    <parent link="link_2"/>
+
+    <child link="link_3"/>
+
+    <origin
+      xyz="0.5 0 0"
+      rpy="0 0 0"/>
+
+    <axis xyz="0 1 0"/>
+
+    <limit
+      lower="-2.5"
+      upper="2.5"
+      effort="20"
+      velocity="2"/>
+
+  </joint>
+
+
+  <!-- JOINT 4 -->
+
+  <joint name="joint_4" type="revolute">
+
+    <parent link="link_3"/>
+
+    <child link="link_4"/>
+
+    <origin
+      xyz="0.38 0 0"
+      rpy="0 0 0"/>
+
+    <axis xyz="1 0 0"/>
+
+    <limit
+      lower="-3.14159"
+      upper="3.14159"
+      effort="10"
+      velocity="2"/>
+
+  </joint>
+
+
+  <!-- JOINT 5 -->
+
+  <joint name="joint_5" type="revolute">
+
+    <parent link="link_4"/>
+
+    <child link="link_5"/>
+
+    <origin
+      xyz="0 0 0.28"
+      rpy="0 0 0"/>
+
+    <axis xyz="0 1 0"/>
+
+    <limit
+      lower="-2.0"
+      upper="2.0"
+      effort="10"
+      velocity="2"/>
+
+  </joint>
+
+
+  <!-- JOINT 6 -->
+
+  <joint name="joint_6" type="revolute">
+
+    <parent link="link_5"/>
+
+    <child link="link_6"/>
+
+    <origin
+      xyz="0 0 0.25"
+      rpy="0 0 0"/>
+
+    <axis xyz="0 0 1"/>
+
+    <limit
+      lower="-3.14159"
+      upper="3.14159"
+      effort="10"
+      velocity="2"/>
+
+  </joint>
+
+
+  <!-- FIXED TOOL JOINT -->
+
+  <joint name="tool_joint" type="fixed">
+
+    <parent link="link_6"/>
+
+    <child link="tool0"/>
+
+    <origin
+      xyz="0.15 0 0"
+      rpy="0 0 0"/>
+
+  </joint>
+
+</robot>

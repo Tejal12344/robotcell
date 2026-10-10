@@ -1,0 +1,170 @@
+#vue-panel {
+
+    height:
+        100%;
+
+}
+
+
+.vue-panel {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+}
+
+
+.camera-wrap {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    background:
+        #111;
+
+    border-radius:
+        10px;
+
+    overflow:
+        hidden;
+
+    cursor:
+        crosshair;
+
+}
+
+
+.camera-wrap img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    min-height:
+        300px;
+
+    object-fit:
+        cover;
+
+}
+
+
+.crosshair {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        28px;
+
+    height:
+        28px;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+.crosshair::before,
+.crosshair::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    background:
+        #ff3333;
+
+}
+
+
+.crosshair::before {
+
+    width:
+        28px;
+
+    height:
+        2px;
+
+    left:
+        0;
+
+    top:
+        13px;
+
+}
+
+
+.crosshair::after {
+
+    width:
+        2px;
+
+    height:
+        28px;
+
+    left:
+        13px;
+
+    top:
+        0;
+
+}
+
+
+.readout {
+
+    margin-top:
+        14px;
+
+    padding:
+        14px;
+
+    border-radius:
+        9px;
+
+    background:
+        #f2f5f9;
+
+    line-height:
+        1.9;
+
+}
+
+
+.hint {
+
+    margin-top:
+        10px;
+
+    color:
+        #667085;
+
+    font-size:
+        13px;
+
+}

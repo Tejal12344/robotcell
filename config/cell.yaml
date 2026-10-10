@@ -1,0 +1,47 @@
+# web:
+#   http_port: 8080
+#   websocket_url: ws://localhost:9090
+
+# robot:
+#   home_pose: [0.0, -1.0, 1.2, 0.0, 0.8, 0.0]
+#   publish_hz: 20.0
+#   max_joint_velocity: 1.0
+
+# camera:
+#   device: /dev/video0
+#   width: 1280
+#   height: 720
+#   fps: 5
+#   mm_per_pixel: 0.4
+#   belt_speed_mps: 0.25
+#   pipeline_latency_ms: 200
+
+# ros:
+#   joint_command_topic: /joint_command
+#   joint_states_topic: /joint_states
+#   estop_topic: /estop
+#   pick_target_topic: /pick_target
+
+
+web:
+  http_port: 8080
+  websocket_path: /rosbridge
+
+robot:
+  home_pose: [0.0, -0.8, 1.0, 0.0, 0.6, 0.0]
+  publish_hz: 20.0
+
+camera:
+  device: /dev/video0
+  width: 1280
+  height: 720
+  fps: 5
+  mm_per_pixel: 0.4
+  belt_speed_mps: 0.25
+  pipeline_latency_ms: 200
+
+ros:
+  joint_command_topic: /joint_command
+  joint_states_topic: /joint_states
+  estop_topic: /estop
+  pick_target_topic: /pick_target

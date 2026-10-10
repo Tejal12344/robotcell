@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "latest",
+    "vite": "latest",
+    "vue": "latest",
+    "roslib": "latest"
+  },
+  "devDependencies": {}
+}
